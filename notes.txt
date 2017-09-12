@@ -1,0 +1,37 @@
+FOR LOCAL and thoughts/ideas
+============================
+- HAPI JS -
+
+NPM version 6.3.1 (needed for node inspector)
+sudo npm cache clean -f
+sudo n 6.3.1
+
+- For HAPI app -
+npm init
+npm install hapi --save
+npm install mysql
+npm install uuid
+npm install node-schedule
+npm install moment --save
+npm install nodemailer (for email)
+
+- Creating log dir: -
+cd PILocator
+mkdir logs
+
+
+- For debugging: -
+sudo npm install -g node-inspector
+Run HAPI app without debugger: node server.js
+Run with debugger : node-debug -p 7777 server.js
+
+server running at: localhost:3000
+Node inspector at: http://127.0.0.1:7777/?port=5858
+
+- Process monitoring: -
+sudo npm install pm2 -g
+
+pm2 start server.js 
+pm2 show server
+pm2 logs server [--lines 1000]
+pm2 monit

@@ -1,0 +1,32 @@
+NPM version 6.3.1 (needed for node inspector)
+=============================================
+sudo npm cache clean -f
+sudo n 6.3.1
+
+For HAPI app
+============
+npm init
+npm install hapi --save
+npm install mysql
+npm install uuid
+npm install node-schedule
+npm install moment --save
+npm install nodemailer (for email)
+
+For debugging
+=============
+sudo npm install -g node-inspector
+Run with debugger : node-debug -p 7777 server.js
+
+Without debugger
+================
+Run HAPI app without debugger: node server.js
+
+Information
+===========
+server running at: localhost:3000
+Node inspector at: http://127.0.0.1:7777/?port=5858
+
+Find and remove the ADDRESS in use error
+========================================
+lsof -i :5858 | awk '{ print $2; }' | head -n 2 | grep -v PID
